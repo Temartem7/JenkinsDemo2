@@ -13,7 +13,7 @@ public class BaseClass {
 	
 	@BeforeMethod
 	public void setup() {
-		
+		System.out.println("Browser setup starting");
 		if(System.getProperty("browser").equalsIgnoreCase("Chrome")) {
 			WebDriverManager.chromedriver().setup();
 			driver=new ChromeDriver();
@@ -31,6 +31,7 @@ public class BaseClass {
 	
 	@AfterMethod
 	public void tearDown() {
+		System.out.println("Browser closing");
 		driver.close();
 	}
 }
